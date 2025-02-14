@@ -68,24 +68,23 @@ chmod +x cleanup.sh
 ```
 ---
 
-## 📌 Saving and Uploading an Updated Backup
+## 📌 Uploading an Updated Backup
 To save your updated website backup, follow these steps:
 
-1. Run the backup script to create an updated backup file:
+If you have permission to update the repository, upload the backup file:
    ```bash
-   chmod +x backup.sh
-   ./backup.sh
-   ```
-   This will generate a new `drupal_backup.sql.gz` file.
-
-2. If you have permission to update the repository, upload the backup file:
-   ```bash
+   git init  # Initialize git if not already initialized
+   git remote add origin https://github.com/uriyaor/drupal-docker-backup.git  # Ensure the correct remote repository is set
+   git pull origin main --allow-unrelated-histories  # Ensure the latest changes are fetched
    git add drupal_backup.sql.gz
    git commit -m "Updated Drupal database backup"
    git push origin main
    ```
 
-3. If you don't have push permissions, share the backup file with someone who does, or request access to the repository.
+If you don't have push permissions, you can:
+   - Share the backup file with someone who has access.
+   - Request access to the repository from the maintainers.
+   - Fork the repository, upload the backup file, and submit a pull request.
 
 ---
 
