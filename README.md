@@ -1,7 +1,7 @@
-# Drupal Docker Backup
+# Software Development Tools
 
 ## 📌 About the Project
-This project provides backup, restore, cleanup, and setup scripts for deploying a **Drupal** instance with **Docker** and **MySQL**. It ensures that the system is easily deployable, backed up, and restored when needed.
+This project provides setup, backup, restore and cleanup scripts for deploying a **Drupal** instance with **Docker** and **MySQL**. It ensures that the system is easily deployable, backed up, and restored when needed.
 
 ## 🚀 Getting Started
 Follow these steps to set up and manage your Drupal instance using the provided scripts.
@@ -19,7 +19,6 @@ Follow these steps to set up and manage your Drupal instance using the provided 
 - **MySQL** - Database management system for Drupal.
 - **Drush** - Drupal management CLI tool.
 - **Composer** - PHP dependency manager.
-- **Linux** - For running shell scripts and automating deployment.
 
 ---
 
