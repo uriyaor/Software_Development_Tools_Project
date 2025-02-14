@@ -126,4 +126,6 @@ If you don't have push permissions, you can:
 ---
 
 ## 👥 Contributors
-- **Uriya Oren**, **Guy Simai**, **Sarit Rosenblum**
+- **Uriya Oren**
+- **Guy Simai**
+- **Sarit Rosenblum**
