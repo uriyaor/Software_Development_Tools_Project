@@ -71,19 +71,44 @@ chmod +x cleanup.sh
 ## 📌 Uploading an Updated Backup
 To save your updated website backup, follow these steps:
 
-If you have permission to update the repository, upload the backup file:
+   **Step 1: Initialize Git (if not already initialized)**
    ```bash
-   git init  # Initialize git if not already initialized
-   git remote add origin https://github.com/uriyaor/drupal-docker-backup.git  # Ensure the correct remote repository is set
-   git pull origin main --allow-unrelated-histories  # Ensure the latest changes are fetched
+   git init  
+   ```
+   This command initializes a Git repository if it doesn't exist.
+
+   **Step 2: Add the remote repository (if not set yet)**
+   ```bash
+   git remote add origin https://github.com/uriyaor/drupal-docker-backup.git
+   ```
+   This links your local repository to the GitHub repository.
+
+   **Step 3: Fetch the latest changes**
+   ```bash
+   git pull origin main --allow-unrelated-histories
+   ```
+   Ensures your local copy is up-to-date before making changes.
+
+   **Step 4: Add the backup file to version control**
+   ```bash
    git add drupal_backup.sql.gz
+   ```
+   Stages the backup file for commit.
+
+   **Step 5: Commit the changes**
+   ```bash
    git commit -m "Updated Drupal database backup"
+   ```
+   Saves the changes with a descriptive message.
+
+   **Step 6: Push the changes to the repository**
+   ```bash
    git push origin main
    ```
+   Uploads the changes to the remote GitHub repository.
 
 If you don't have push permissions, you can:
    - Share the backup file with someone who has access.
-   - Request access to the repository from the maintainers.
    - Fork the repository, upload the backup file, and submit a pull request.
 
 ---
