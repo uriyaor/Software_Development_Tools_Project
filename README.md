@@ -87,6 +87,4 @@ chmod +x cleanup.sh
 ---
 
 ## 👥 Contributors
-- **Uriya**, **Guy**, **Sarit**
-
-Feel free to open issues or contribute improvements to the repository!
+- **Uriya Oren**, **Guy Simai**, **Sarit Rosenblum**
