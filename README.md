@@ -1,4 +1,4 @@
-# Software Development Tools
+# Software Development Tools Project
 
 ## 📌 About the Project
 This project provides setup, backup, restore and cleanup scripts for deploying a **Drupal** instance with **Docker** and **MySQL**. It ensures that the system is easily deployable, backed up, and restored when needed.
