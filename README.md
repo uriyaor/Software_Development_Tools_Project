@@ -79,7 +79,7 @@ To save your updated website backup, follow these steps:
 
    **Step 2: Add the remote repository (if not set yet)**
    ```bash
-   git remote add origin https://github.com/uriyaor/drupal-docker-backup.git
+   git remote add origin https://github.com/uriyaor/Software_Development_Tools_Project.git
    ```
    This links your local repository to the GitHub repository.
 
