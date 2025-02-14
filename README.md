@@ -41,7 +41,7 @@ chmod +x setup.sh
 ### 3️⃣ Access the Drupal Site
 Once the setup is complete, the Drupal site will be available at:
 ```
-http://localhost:8080
+xdg-open http://localhost:8080
 ```
 
 ### 4️⃣ Restore the Database
