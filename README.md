@@ -83,25 +83,19 @@ To save your updated website backup, follow these steps:
    ```
    This links your local repository to the GitHub repository.
 
-   **Step 3: Fetch the latest changes**
-   ```bash
-   git pull --rebase origin main
-   ```
-   Ensures your local copy is up-to-date before making changes.
-
-   **Step 4: Add the backup file to version control**
+   **Step 3: Add the backup file to version control**
    ```bash
    git add drupal_backup.sql.gz
    ```
    Stages the backup file for commit.
 
-   **Step 5: Commit the changes**
+   **Step 4: Commit the changes**
    ```bash
    git commit -m "Updated Drupal database backup"
    ```
    Saves the changes with a descriptive message.
 
-   **Step 6: Push the changes to the repository**
+   **Step 5: Push the changes to the repository**
    ```bash
    git push origin main
    ```
