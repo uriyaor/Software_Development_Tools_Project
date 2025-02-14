@@ -1,21 +1,39 @@
 #!/bin/bash
 
-# Message about cloning the repository
-echo "Now running the command: git clone"
-git clone https://github.com/uriyaor/drupal-docker-backup.git
+# Notify the user that the process is starting
+echo "Starting the process..."
 
-# Message about changing to the repository directory
-echo "Now running the command: cd drupal-docker-backup"
-cd drupal-docker-backup
+# Install Docker if it's not already installed
+echo "Now running the command: Installing Docker"
+sudo apt-get update && sudo apt-get install docker.io -y >/dev/null 2>&1
 
-# Message about making the script executable
-echo "Now running the command: chmod +x setup.sh"
-chmod +x setup.sh
+# Create Docker network if it does not exist
+echo "Now running the command: Creating Docker network"
+docker network create drupal_network >/dev/null 2>&1
 
-# Message about running the setup script
-echo "Now running the command: ./setup.sh"
-./setup.sh
+# Start MySQL container
+echo "Now running the command: Starting MySQL container"
+docker run --name mysql_container --network drupal_network -e MYSQL_ROOT_PASSWORD=root -d mysql:latest >/dev/null 2>&1
 
-# Message about running the restore script
-echo "Now running the command: ./restore.sh"
-./restore.sh
+# Start Drupal container
+echo "Now running the command: Starting Drupal container"
+docker run --name drupal_container --network drupal_network -d -p 8080:80 drupal:latest >/dev/null 2>&1
+
+# Install Drupal requirements inside the container
+echo "Now running the command: Installing Drupal dependencies inside the container"
+docker exec -it drupal_container bash -c "apt-get update && apt-get install -y curl git unzip" >/dev/null 2>&1
+
+# Run Drupal installation steps
+echo "Now running the command: Running automatic Drupal installation"
+docker exec -it drupal_container bash -c "curl -sS https://getcomposer.org/installer | php" >/dev/null 2>&1
+
+# Download backup file from GitHub
+echo "Now running the command: Downloading backup file"
+curl -L https://raw.githubusercontent.com/uriyaor/Software_Development_Tools_Project/main/drupal_backup.sql.gz -o /tmp/drupal_backup.sql.gz >/dev/null 2>&1
+
+# Restore the database from the backup file
+echo "Now running the command: Restoring the database"
+docker exec -i mysql_container bash -c "gunzip < /tmp/drupal_backup.sql.gz | mysql -u root -proot drupal" >/dev/null 2>&1
+
+# Notify the user that the process is complete
+echo "Drupal installation and database restoration are complete!"
