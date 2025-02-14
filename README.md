@@ -28,7 +28,7 @@ This guide will help you set up and run the project from scratch.
 ### 1️⃣ Clone the Repository
 ```bash
  git clone https://github.com/uriyaor/Software_Development_Tools_Project.git
- cd drupal-docker-backup
+ cd Software_Development_Tools_Project
 ```
 
 ### 2️⃣ Run the Setup Script
