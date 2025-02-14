@@ -66,7 +66,15 @@ To stop and remove the containers and images:
 chmod +x cleanup.sh
 ./cleanup.sh
 ```
+# Setup and Run Script for Drupal Docker Backup
 
+This script automates the process of cloning the repository, navigating to the project directory, making the necessary script executable, and running the setup script to back up or restore the Drupal Docker containers.
+
+## How to Use
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/uriyaor/drupal-docker-backup.git
 ---
 
 ## 📌 Additional Notes
