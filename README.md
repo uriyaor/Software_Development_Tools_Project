@@ -85,7 +85,7 @@ To save your updated website backup, follow these steps:
 
    **Step 3: Fetch the latest changes**
    ```bash
-   git pull origin main --allow-unrelated-histories
+   git pull --rebase origin main
    ```
    Ensures your local copy is up-to-date before making changes.
 
