@@ -44,15 +44,7 @@ Once the setup is complete, the Drupal site will be available at:
 http://localhost:8080
 ```
 
-### 4️⃣ Backup the Database
-To create a backup of the MySQL database:
-```bash
-chmod +x backup.sh
-./backup.sh
-```
-This will generate a compressed backup file `drupal_backup.sql.gz`.
-
-### 5️⃣ Restore the Database
+### 4️⃣ Restore the Database
 If you need to restore the database from a backup:
 ```bash
 chmod +x restore.sh
@@ -60,21 +52,20 @@ chmod +x restore.sh
 ```
 This downloads the latest backup from the repository and restores the database.
 
+### 5️⃣ Backup the Database
+To create a backup of the MySQL database:
+```bash
+chmod +x backup.sh
+./backup.sh
+```
+This will generate a compressed backup file `drupal_backup.sql.gz`.
+
 ### 6️⃣ Cleanup the Environment
 To stop and remove the containers and images:
 ```bash
 chmod +x cleanup.sh
 ./cleanup.sh
 ```
-# Setup and Run Script for Drupal Docker Backup
-
-This script automates the process of cloning the repository, navigating to the project directory, making the necessary script executable, and running the setup script to back up or restore the Drupal Docker containers.
-
-## How to Use
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/uriyaor/drupal-docker-backup.git
 ---
 
 ## 📌 Additional Notes
