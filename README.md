@@ -1,68 +1,93 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Drupal Docker Backup</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 20px;
-            padding: 20px;
-            background-color: #f4f4f4;
-        }
-        h1, h2, h3 {
-            color: #333;
-        }
-        pre {
-            background: #ddd;
-            padding: 10px;
-            border-radius: 5px;
-        }
-        code {
-            font-weight: bold;
-        }
-    </style>
-</head>
-<body>
-    <h1>Drupal Docker Backup</h1>
-    <p>This project provides backup, restore, cleanup, and setup scripts for deploying a <strong>Drupal</strong> instance with <strong>Docker</strong> and <strong>MySQL</strong>.</p>
-    
-    <h2>🚀 Getting Started</h2>
-    <h3>📂 Repository Structure</h3>
-    <ul>
-        <li><code>setup.sh</code> - Installs dependencies and starts Drupal & MySQL containers.</li>
-        <li><code>backup.sh</code> - Backs up the MySQL database.</li>
-        <li><code>restore.sh</code> - Restores the database from a backup.</li>
-        <li><code>cleanup.sh</code> - Stops and removes containers.</li>
-    </ul>
-    
-    <h2>📖 Installation Guide (Step-by-Step)</h2>
-    <h3>1️⃣ Clone the Repository</h3>
-    <pre><code>git clone https://github.com/uriyaor/drupal-docker-backup.git
-cd drupal-docker-backup</code></pre>
-    
-    <h3>2️⃣ Run the Setup Script</h3>
-    <pre><code>chmod +x setup.sh
-./setup.sh</code></pre>
-    
-    <h3>3️⃣ Access the Drupal Site</h3>
-    <p>Once the setup is complete, access it at:</p>
-    <pre><code>http://localhost:8080</code></pre>
-    
-    <h3>4️⃣ Backup the Database</h3>
-    <pre><code>chmod +x backup.sh
-./backup.sh</code></pre>
-    
-    <h3>5️⃣ Restore the Database</h3>
-    <pre><code>chmod +x restore.sh
-./restore.sh</code></pre>
-    
-    <h3>6️⃣ Cleanup the Environment</h3>
-    <pre><code>chmod +x cleanup.sh
-./cleanup.sh</code></pre>
-    
-    <h2>👥 Contributors</h2>
-    <p>Uriya, Guy, Sarit</p>
-</body>
-</html>
+# Drupal Docker Backup
+
+## 📌 About the Project
+This project provides backup, restore, cleanup, and setup scripts for deploying a **Drupal** instance with **Docker** and **MySQL**. It ensures that the system is easily deployable, backed up, and restored when needed.
+
+## 🚀 Getting Started
+Follow these steps to set up and manage your Drupal instance using the provided scripts.
+
+### 📂 Repository Structure
+- **`setup.sh`** - Installs necessary dependencies and starts Drupal and MySQL containers.
+- **`backup.sh`** - Backs up all MySQL databases into a compressed file.
+- **`restore.sh`** - Restores the database from a backup file.
+- **`cleanup.sh`** - Stops and removes all running containers and images.
+
+---
+
+## 🛠️ Technologies Used
+- **Docker** - Containerization of MySQL and Drupal.
+- **MySQL** - Database management system for Drupal.
+- **Drush** - Drupal management CLI tool.
+- **Composer** - PHP dependency manager.
+- **Linux** - For running shell scripts and automating deployment.
+
+---
+
+## 📖 Installation Guide (Step-by-Step)
+This guide will help you set up and run the project from scratch.
+
+### 1️⃣ Clone the Repository
+```bash
+ git clone https://github.com/uriyaor/drupal-docker-backup.git
+ cd drupal-docker-backup
+```
+
+### 2️⃣ Run the Setup Script
+This script installs Docker, creates a network, and starts MySQL and Drupal containers.
+```bash
+chmod +x setup.sh
+./setup.sh
+```
+
+### 3️⃣ Access the Drupal Site
+Once the setup is complete, the Drupal site will be available at:
+```
+http://localhost:8080
+```
+
+### 4️⃣ Backup the Database
+To create a backup of the MySQL database:
+```bash
+chmod +x backup.sh
+./backup.sh
+```
+This will generate a compressed backup file `drupal_backup.sql.gz`.
+
+### 5️⃣ Restore the Database
+If you need to restore the database from a backup:
+```bash
+chmod +x restore.sh
+./restore.sh
+```
+This downloads the latest backup from the repository and restores the database.
+
+### 6️⃣ Cleanup the Environment
+To stop and remove the containers and images:
+```bash
+chmod +x cleanup.sh
+./cleanup.sh
+```
+
+---
+
+## 📌 Additional Notes
+- Ensure **Docker** is installed and running before executing the scripts.
+- The **MySQL root password** is set to `my-secret-pw` (change in `setup.sh` if needed).
+- The **Drupal admin credentials**:
+  - **Username:** `demoadmin`
+  - **Password:** `secretpass`
+  - **Email:** `demoadmin@example.com`
+
+---
+
+## ❗ Troubleshooting
+- If MySQL or Drupal fails to start, ensure the ports `8080` (Drupal) and `3306` (MySQL) are not in use.
+- Run `docker ps -a` to check container statuses.
+- Use `docker logs drupal_container` or `docker logs mysql_container` to debug issues.
+
+---
+
+## 👥 Contributors
+- **Uriya**, **Guy**, **Sarit**
+
+Feel free to open issues or contribute improvements to the repository!
